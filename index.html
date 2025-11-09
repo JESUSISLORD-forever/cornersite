@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  
+  <title>Cornersites - Professional Web Development</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --primary:#1a365d;--secondary:#2b6cb0;--accent:#e53e3e;--light:#f7fafc;--dark:#1a202c;
+      --text:#2d3748;--text-light:#718096;--shadow:0 4px 6px rgba(0,0,0,0.06);--shadow-lg:0 10px 15px rgba(0,0,0,0.08);
+      --transition:all .28s cubic-bezier(.4,0,.2,1);--radius:10px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0;font-family:'Inter',sans-serif}
+    body{color:var(--text);background:var(--light);line-height:1.6;overflow-x:hidden}
+    .container{width:95%;max-width:1200px;margin:0 auto;padding:0 16px}
+
+    /* Header */
+    header{position:fixed;top:0;left:0;right:0;background:rgba(255,255,255,0.95);backdrop-filter:blur(6px);z-index:1000;box-shadow:var(--shadow)}
+    .top-bar{background:linear-gradient(90deg,var(--primary),var(--secondary));color:#fff;padding:6px 0;font-size:.86rem}
+    .top-bar-content{display:flex;justify-content:space-between;align-items:center}
+    .group-badge{background:rgba(255,255,255,0.12);padding:5px 10px;border-radius:20px;font-weight:600;font-size:.82rem}
+    .header-container{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+    .logo{display:flex;align-items:center;gap:8px;font-weight:700;color:var(--primary);font-size:1.3rem}
+    .logo i{color:var(--accent)}
+    nav{display:flex;align-items:center;gap:18px}
+    nav ul{display:flex;gap:20px;list-style:none;align-items:center}
+    nav a{color:var(--text);text-decoration:none;font-weight:500;padding:6px}
+    .language-toggle{background:var(--secondary);color:#fff;border:none;padding:8px 12px;border-radius:12px;cursor:pointer;display:flex;gap:8px;align-items:center}
+    .mobile-menu{display:none;font-size:1.25rem;color:var(--primary);cursor:pointer}
+
+    /* Hero */
+    .hero{padding:170px 0 80px;background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;text-align:center;position:relative}
+    .hero h1{font-size:2.6rem;line-height:1.08;margin-bottom:12px}
+    .hero p{opacity:.94;font-weight:300;margin:0 auto 22px;max-width:680px}
+    .cta-button{background:var(--accent);color:#fff;padding:12px 26px;border-radius:28px;text-decoration:none;font-weight:600;border:none;cursor:pointer}
+
+    /* Sections */
+    .section{padding:80px 0}
+    .section-title{text-align:center;margin-bottom:40px}
+    .section-title h2{color:var(--primary);font-size:2rem;margin-bottom:8px}
+    .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px}
+
+    .service-card{background:#fff;border-radius:var(--radius);padding:26px;box-shadow:var(--shadow);text-align:center;border:1px solid rgba(0,0,0,0.04)}
+    .service-icon{width:70px;height:70px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;background:rgba(43,108,176,0.08);font-size:1.6rem;color:var(--secondary);margin-bottom:16px}
+
+    .portfolio{background:#f1f5f9}
+    .portfolio-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}
+    .portfolio-img{height:200px;background:linear-gradient(135deg,var(--secondary),var(--primary));display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.2rem;position:relative;overflow:hidden}
+
+    .about-container{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:36px;align-items:center}
+    .about-image{height:300px;border-radius:var(--radius);display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#f8fafc,#e2e8f0);box-shadow:var(--shadow)}
+
+    /* Contact */
+    .contact-container{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:32px}
+    .contact-form iframe{width:100%;height:600px;border:none;border-radius:var(--radius);box-shadow:var(--shadow)}
+
+    /* Footer */
+    footer{background:var(--dark);color:#fff;padding:56px 0}
+    .footer-container{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:26px}
+    .social-links{display:flex;gap:10px;margin-top:12px}
+    .social-links a{width:40px;height:40px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.06);color:#fff;text-decoration:none}
+
+    .cornerstone-badge{position:fixed;right:16px;bottom:16px;background:var(--primary);color:#fff;padding:10px 14px;border-radius:26px;display:flex;gap:8px;align-items:center;box-shadow:var(--shadow-lg)}
+
+    /* small screens */
+    @media (max-width:900px){
+      .hero h1{font-size:2rem}
+      .hero{padding:140px 0 60px}
+    }
+    @media (max-width:768px){
+      nav{display:none}
+      .mobile-menu{display:block}
+      .header-container{gap:8px}
+      .logo{font-size:1.05rem}
+      .hero{padding:120px 0 40px}
+      .contact-form iframe{height:500px}
+    }
+    /* amharic font fallback */
+    @font-face{font-family:'Abyssinica SIL';src:url('https://fonts.googleapis.com/css2?family=Abyssinica+SIL&display=swap')}
+    .amharic{font-family:'Abyssinica SIL',serif;direction:ltr}
+    /* accessibility */
+    a:focus, button:focus, input:focus, textarea:focus {outline:3px solid rgba(43,108,176,0.12);outline-offset:2px}
+    /* animation */
+    .fade-in-up{opacity:0;transform:translateY(10px);transition:opacity .45s ease,transform .45s ease}
+    .visible{opacity:1;transform:none}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="top-bar">
+      <div class="container top-bar-content">
+        <div class="group-badge" id="groupBadge" data-en="PART OF CORNERSTONE BUSINESS GROUP" data-am="የ CORNERSTONE BUSINESS GROUP አባል">PART OF CORNERSTONE BUSINESS GROUP</div>
+        <div class="motto" id="motto" data-en="He is our CORNERSTONE" data-am="እርሱ የእኛ ማዕዘን ራስ ነው">He is our CORNERSTONE</div>
+      </div>
+    </div>
+
+    <div class="container header-container">
+      <div class="logo"><i class="fas fa-code"></i> Corner<span style="color:var(--secondary)">sites</span></div>
+
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="#home" class="nav-link" data-en="Home" data-am="መነሻ">Home</a></li>
+          <li><a href="#services" class="nav-link" data-en="Services" data-am="አገልግሎቶች">Services</a></li>
+          <li><a href="#portfolio" class="nav-link" data-en="Portfolio" data-am="ስራዎች">Portfolio</a></li>
+          <li><a href="#about" class="nav-link" data-en="About" data-am="ስለ እኛ">About</a></li>
+          <li><a href="#contact" class="nav-link" data-en="Contact" data-am="አግኙን">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div style="display:flex;align-items:center;gap:10px">
+        <button class="language-toggle" id="languageToggle"><i class="fas fa-language"></i> <span id="languageText">Amharic</span></button>
+        <div class="mobile-menu" id="mobileToggle"><i class="fas fa-bars"></i></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="container">
+      <h1 id="heroTitle" data-en="Professional Web Development Solutions" data-am="የድህረ-ገጽ ማዋቀር አገልግሎት">Professional Web Development Solutions</h1>
+      <p id="heroText" data-en="We create stunning, responsive websites that help your business grow and succeed in the digital world." data-am="የንግድዎን ስኬት ለማሳደግ እና በዲጂታል ዓለም ላይ ስራዎን እንዲያሳልጡ አስደናቂ ድህረ-ገጾቸን እናዋቅራለን።">We create stunning, responsive websites that help your business grow and succeed in the digital world.</p>
+      <a href="#contact" class="cta-button" id="heroButton" data-en="Get Started" data-am="ጀምር">Get Started</a>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section-title">
+        <h2 id="servicesTitle" data-en="Our Services" data-am="የምንሰጣቸው አገልግሎቶች">Our Services</h2>
+        <p id="servicesSubtitle" data-en="We offer a comprehensive range of web development services to meet your business needs." data-am="የንግድዎን ፍላጎት ለማሟላት ሙሉ የድር ጣቢያ አቀናባሪ አገልግሎቶችን እንሰጣለን።">We offer a comprehensive range of web development services to meet your business needs.</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card fade-in-up">
+          <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
+          <h3 id="service1Title" data-en="Web Development" data-am="ድህረ-ገጽ ማቀናባር">Web Development</h3>
+          <p id="service1Text" data-en="Custom websites built with modern technologies and best practices." data-am="ዘመናዊ ቴክኖሎጂ እና ምርጥ ልምዶች በመጠቀም የተለየ ድር ጣቢያዎችን እንገነባለን።">Custom websites built with modern technologies and best practices.</p>
+        </div>
+        <div class="service-card fade-in-up">
+          <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
+          <h3 id="service2Title" data-en="Responsive Design" data-am="ተስማሚ ዲዛይን">Responsive Design</h3>
+          <p id="service2Text" data-en="Websites that look great on all devices." data-am="በሁሉም መሳሪያዎች መልካም የሚታዩ ድር ጣቢያዎች።">Websites that look great on all devices.</p>
+        </div>
+        <div class="service-card fade-in-up">
+          <div class="service-icon"><i class="fas fa-shopping-cart"></i></div>
+          <h3 id="service3Title" data-en="E-commerce Solutions" data-am="የኢኮሜርስ መፍትሄዎች">E-commerce Solutions</h3>
+          <p id="service3Text" data-en="Online stores with secure payment processing and inventory management." data-am="ደህንነቱ የተጠበቀ የክፍያ ስርዓት ያላቸው የመስመር ላይ ሱቆች።">Online stores with secure payment processing and inventory management.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio -->
+  <section class="section portfolio" id="portfolio">
+    <div class="container">
+      <div class="section-title">
+        <h2 id="portfolioTitle" data-en="Our Work" data-am="የእኛ ስራ">Our Work</h2>
+        <p id="portfolioSubtitle" data-en="Check out some of our recent projects and success stories." data-am="ከቅርብ ጊዜ ፕሮጀክቶቻችን እና የስኬት ታሪኮች ይመልከቱ።">Check out some of our recent projects and success stories.</p>
+      </div>
+      <div class="portfolio-grid">
+        <div class="portfolio-item fade-in-up">
+          <div class="portfolio-img"><i class="fas fa-briefcase"></i></div>
+          <div class="portfolio-content">
+            <h3 id="project1Title" data-en="Business Website" data-am="የንግድ ድር ጣቢያ">Business Website</h3>
+            <p id="project1Text" data-en="A modern website for a local business with online booking." data-am="የመስመር ላይ ማስያዝ ስርዓት ያለው ለአካባቢያዊ ንግድ ዘመናዊ ድር ጣቢያ።">A modern website for a local business with online booking.</p>
+          </div>
+        </div>
+        <div class="portfolio-item fade-in-up">
+          <div class="portfolio-img"><i class="fas fa-store"></i></div>
+          <div class="portfolio-content">
+            <h3 id="project2Title" data-en="E-commerce Store" data-am="የኢኮሜርስ ሱቅ">E-commerce Store</h3>
+            <p id="project2Text" data-en="A full-featured online store with payment integration." data-am="የክፍያ ማዋሃድ እና የአስተዳደር ፓነል ያለው ሙሉ ባህሪ ያለው የመስመር ላይ ሱቅ።">A full-featured online store with payment integration.</p>
+          </div>
+        </div>
+        <div class="portfolio-item fade-in-up">
+          <div class="portfolio-img"><i class="fas fa-graduation-cap"></i></div>
+          <div class="portfolio-content">
+            <h3 id="project3Title" data-en="Educational Platform" data-am="የትምህርት መድረክ">Educational Platform</h3>
+            <p id="project3Text" data-en="Interactive learning platform with dashboards." data-am="የኮርስ አስተዳደር እና የተማሪ ዳሽቦርድ ያለው በይነመረብ የትምህርት መድረክ።">Interactive learning platform with dashboards.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="section about" id="about">
+    <div class="container">
+      <div class="section-title">
+        <h2 id="aboutTitle" data-en="About Cornersites" data-am="ስለ Cornersites">About Cornersites</h2>
+        <p id="aboutSubtitle" data-en="Learn more about our company and our mission." data-am="ስለ ኩባንያችን እና ተልዕኮችን ይወቁ።">Learn more about our company and our mission.</p>
+      </div>
+      <div class="about-container">
+        <div class="about-content fade-in-up">
+          <h3 id="aboutContentTitle" data-en="Building Digital Foundations" data-am="ዲጂታል መሠረቶችን መገንባት">Building Digital Foundations</h3>
+          <p id="aboutText1" data-en="Cornersites is a professional web development company dedicated to creating exceptional online experiences for businesses of all sizes. As part of the Cornerstone Business Group, we uphold the highest standards of quality and integrity in all our projects." data-am="Cornersites ለሁሉም መጠን ያላቸው �ንግዶች ከፍተኛ የመስመር ላይ ተሞክሮዎችን ለመፍጠር የተሰየመ የሞያ ድር ጣቢያ አቀናባሪ ኩባንያ ነው። እንደ የ Cornerstone ንግድ ቡድን አባል፣ በሁሉም ፕሮጀክቶቻችን ከፍተኛ የጥራት እና የአገልግሎት ደረጃዎችን እንጠብቃለን።">Cornersites is a professional web development company dedicated to creating exceptional online experiences for businesses of all sizes. As part of the Cornerstone Business Group, we uphold the highest standards of quality and integrity in all our projects.</p>
+          <p id="aboutText2" data-en="Our name reflects our approach - we build the foundational corners of your digital presence, ensuring your website is strong, reliable, and ready for growth. Just as a cornerstone provides stability to a building, we provide the digital foundation for your business success." data-am="ስሞቻችን አቀራረባችንን ያንፀባርቃል - የዲጂታል ቦታዎችዎን መሠረታዊ ማዕዘኖች �እንገነባለን፣ ድር ጣቢያዎ ጠንካራ፣ አስተማማኝ እና ለእድገት ዝግጁ መሆኑን እናረጋግጣለን። መሠረተ ድንጋይ ለሕንፃ መረጋጋት እንደሚሰጥ በመሳሰሉት፣ እኛ ደግሞ ለንግድዎ ስኬት ዲጂታል መሠረት እናቀርባለን።">Our name reflects our approach - we build the foundational corners of your digital presence, ensuring your website is strong, reliable, and ready for growth. Just as a cornerstone provides stability to a building, we provide the digital foundation for your business success.</p>
+        </div>
+        <div class="about-image fade-in-up">
+          <i class="fas fa-code" style="font-size:48px;opacity:.8;color:var(--secondary)"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section-title">
+        <h2 id="contactTitle" data-en="Get In Touch" data-am="ያግኙን">Get In Touch</h2>
+        <p id="contactSubtitle" data-en="Ready to start your project? Contact us today for a free consultation." data-am="ፕሮጀክትዎን ለመጀመር ዝግጁ ነዎት? ዛሬ ለነፃ ምክክር ያግኙን።">Ready to start your project? Contact us today for a free consultation.</p>
+      </div>
+
+      <div class="contact-container">
+        <div class="contact-info fade-in-up">
+          <h3 id="contactInfoTitle" data-en="Contact Information" data-am="የመገኛ መረጃ">Contact Information</h3>
+          <div class="contact-details">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px"><i class="fas fa-map-marker-alt"></i><span id="address" data-en="Addis Ababa, Ethiopia" data-am="አዲስ አበባ፣ ኢትዮጵያ">Addis Ababa, Ethiopia</span></div>
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px"><i class="fas fa-phone"></i><span id="phone">+251 953 4065 07</span></div>
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px"><i class="fas fa-envelope"></i><span id="email">cornercartonlinemarket@gmail.com</span></div>
+          </div>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+        <div class="contact-form fade-in-up">
+          <iframe src="https://forms.gle/fYvP1DrLEEv1HEKEA" width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-container">
+      <div>
+        <h3>Corner<span style="color:var(--secondary)">sites</span></h3>
+        <p id="footerText" data-en="Professional web development solutions for your business growth." data-am="ለንግድዎ እድገት የሞያ ድር ጣቢያ አቀናባሪ መፍትሄዎች።">Professional web development solutions for your business growth.</p>
+        <div style="margin-top:12px;background:rgba(255,255,255,0.08);display:inline-block;padding:6px 10px;border-radius:8px;font-size:.85rem">PART OF CORNERSTONE BUSINESS GROUP</div>
+      </div>
+      <div>
+        <h3 id="quickLinksTitle" data-en="Quick Links" data-am="ፈጣን አገናኞች">Quick Links</h3>
+        <ul style="list-style:none;padding-left:0;margin-top:8px">
+          <li><a href="#home" class="footer-link" data-en="Home" data-am="መነሻ" style="color:#cbd5e0;text-decoration:none">Home</a></li>
+          <li><a href="#services" class="footer-link" data-en="Services" data-am="አገልግሎቶች" style="color:#cbd5e0;text-decoration:none">Services</a></li>
+          <li><a href="#portfolio" class="footer-link" data-en="Portfolio" data-am="ስራዎች" style="color:#cbd5e0;text-decoration:none">Portfolio</a></li>
+          <li><a href="#about" class="footer-link" data-en="About" data-am="ስለ እኛ" style="color:#cbd5e0;text-decoration:none">About</a></li>
+          <li><a href="#contact" class="footer-link" data-en="Contact" data-am="አግኙን" style="color:#cbd5e0;text-decoration:none">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 id="servicesFooterTitle" data-en="Services" data-am="አገልግሎቶች">Services</h3>
+        <ul style="list-style:none;padding-left:0;margin-top:8px">
+          <li><a href="#" class="footer-link" data-en="Web Development" data-am="ድር ጣቢያ አቀናባሪ" style="color:#cbd5e0;text-decoration:none">Web Development</a></li>
+          <li><a href="#" class="footer-link" data-en="E-commerce" data-am="ኢኮሜርስ" style="color:#cbd5e0;text-decoration:none">E-commerce</a></li>
+          <li><a href="#" class="footer-link" data-en="Responsive Design" data-am="ተስማሚ ዲዛይን" style="color:#cbd5e0;text-decoration:none">Responsive Design</a></li>
+          <li><a href="#" class="footer-link" data-en="SEO Optimization" data-am="SEO ማመቻቸት" style="color:#cbd5e0;text-decoration:none">SEO Optimization</a></li>
+        </ul>
+      </div>
+    </div>
+    <div style="text-align:center;padding-top:20px;color:#a0aec0;font-size:.9rem">&copy; 2025 Cornersites. All rights reserved. Part of Cornerstone Business Group.</div>
+  </footer>
+
+  <div class="cornerstone-badge"><i class="fas fa-gem" style="color:var(--accent)"></i><span id="badgeText">Part of Cornerstone Business Group</span></div>
+
+  <script>
+    /* Language toggle */
+    const languageToggle = document.getElementById('languageToggle');
+    const languageText = document.getElementById('languageText');
+    let currentLanguage = 'en';
+    let isTranslating = false;
+
+    function toggleLanguage(){
+      if(isTranslating) return;
+      isTranslating = true;
+      const elements = document.querySelectorAll('[data-en],[data-am]');
+      if(currentLanguage === 'en'){
+        elements.forEach(el => {
+          if(el.dataset.am){
+            if(el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') el.placeholder = el.dataset.am;
+            else el.textContent = el.dataset.am;
+          }
+        });
+        languageText.textContent = 'English';
+        document.body.classList.add('amharic');
+        currentLanguage = 'am';
+      } else {
+        elements.forEach(el => {
+          if(el.dataset.en){
+            if(el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') el.placeholder = el.dataset.en;
+            else el.textContent = el.dataset.en;
+          }
+        });
+        languageText.textContent = 'Amharic';
+        document.body.classList.remove('amharic');
+        currentLanguage = 'en';
+      }
+      setTimeout(()=>isTranslating=false,300);
+    }
+    languageToggle.addEventListener('click', toggleLanguage);
+
+    /* Mobile nav toggle */
+    const mobileToggle = document.getElementById('mobileToggle');
+    const nav = document.querySelector('nav');
+    mobileToggle.addEventListener('click', () => {
+      if(nav.style.display === 'flex'){
+        nav.style.display = 'none';
+        mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
+      } else {
+        nav.style.display = 'flex';
+        nav.style.flexDirection = 'column';
+        nav.style.position = 'absolute';
+        nav.style.top = '100%';
+        nav.style.right = '16px';
+        nav.style.background = '#fff';
+        nav.style.padding = '12px';
+        nav.style.borderRadius = '8px';
+        nav.style.boxShadow = '0 8px 20px rgba(0,0,0,0.08)';
+        mobileToggle.innerHTML = '<i class="fas fa-times"></i>';
+      }
+    });
+
+    /* Smooth scroll */
+    document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
+      anchor.addEventListener('click', function(e){
+        const targetId = this.getAttribute('href');
+        if(!targetId || targetId === '#') return;
+        const target = document.querySelector(targetId);
+        if(target){
+          e.preventDefault();
+          window.scrollTo({top: target.offsetTop - 90, behavior: 'smooth'});
+          if(window.innerWidth < 768) { 
+            nav.style.display = 'none'; 
+            mobileToggle.innerHTML = '<i class="fas fa-bars"></i>'; 
+          }
+        }
+      });
+    });
+
+    /* Animation on scroll */
+    const observer = new IntersectionObserver(entries=>{
+      entries.forEach(en=>{
+        if(en.isIntersecting) en.target.classList.add('visible');
+      });
+    }, {threshold:0.12});
+    document.querySelectorAll('.fade-in-up').forEach(el=>observer.observe(el));
+
+    /* Header shadow on scroll */
+    window.addEventListener('scroll', ()=> {
+      const header = document.querySelector('header');
+      header.style.boxShadow = window.scrollY > 60 ? '0 10px 30px rgba(0,0,0,0.08)' : '0 4px 6px rgba(0,0,0,0.06)';
+    });
+  </script>
+</body>
+</html>
