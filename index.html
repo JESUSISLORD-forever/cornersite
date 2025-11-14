@@ -56,7 +56,112 @@
 
     
     .contact-container{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:32px}
-    .contact-form iframe{width:100%;height:600px;border:none;border-radius:var(--radius);box-shadow:var(--shadow)}
+    
+    /* Premium Form Styles */
+    .premium-form {
+      background: #fff;
+      padding: 30px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-lg);
+      border: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .form-label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 12px 16px;
+      border: 2px solid #e2e8f0;
+      border-radius: 8px;
+      font-size: 16px;
+      transition: var(--transition);
+      background: #fff;
+    }
+
+    .form-input:focus {
+      outline: none;
+      border-color: var(--secondary);
+      box-shadow: 0 0 0 3px rgba(43, 108, 176, 0.1);
+    }
+
+    .form-input::placeholder {
+      color: #a0aec0;
+    }
+
+    select.form-input {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%231a365d'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      background-size: 16px;
+    }
+
+    textarea.form-input {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .submit-btn {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      border: none;
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(43, 108, 176, 0.3);
+    }
+
+    .submit-btn:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .form-status {
+      margin-top: 15px;
+      padding: 12px;
+      border-radius: 8px;
+      text-align: center;
+      font-weight: 500;
+      display: none;
+    }
+
+    .form-status.success {
+      background: #c6f6d5;
+      color: #22543d;
+      display: block;
+    }
+
+    .form-status.error {
+      background: #fed7d7;
+      color: #742a2a;
+      display: block;
+    }
 
     
     footer{background:var(--dark);color:#fff;padding:56px 0}
@@ -77,7 +182,6 @@
       .header-container{gap:8px}
       .logo{font-size:1.05rem}
       .hero{padding:120px 0 40px}
-      .contact-form iframe{height:500px}
     }
    
     @font-face{font-family:'Abyssinica SIL';src:url('https://fonts.googleapis.com/css2?family=Abyssinica+SIL&display=swap')}
@@ -198,8 +302,8 @@
       <div class="about-container">
         <div class="about-content fade-in-up">
           <h3 id="aboutContentTitle" data-en="Building Digital Foundations" data-am="ዲጂታል ድህረ-ገጾችን መገንባት">Building Digital Foundations</h3>
-          <p id="aboutText1" data-en="Corner-sites is a professional web development company dedicated to creating exceptional online experiences for businesses of all sizes. As part of the Cornerstone Business Group, we uphold the highest standards of quality and integrity in all our projects." data-am="Corner-sites ለሁሉም መጠን ያላቸው �ንግዶች ከፍተኛ የመስመር ላይ ተሞክሮዎችን ለመፍጠር የተሰየመ የሞያ ድር ጣቢያ አቀናባሪ ኩባንያ ነው። እንደ የ Cornerstone ንግድ ቡድን አባል፣ በሁሉም ፕሮጀክቶቻችን ከፍተኛ የጥራት እና የአገልግሎት ደረጃዎችን እንጠብቃለን።">Corner-sites is a professional web development company dedicated to creating exceptional online experiences for businesses of all sizes. As part of the Cornerstone Business Group, we uphold the highest standards of quality and integrity in all our projects.</p>
-          <p id="aboutText2" data-en="Our name reflects our approach - we build the foundational corners of your digital presence, ensuring your website is strong, reliable, and ready for growth. Just as a cornerstone provides stability to a building, we provide the digital foundation for your business success." data-am="ስሞቻችን አቀራረባችንን ያንፀባርቃል - የዲጂታል ቦታዎችዎን መሠረታዊ ማዕዘኖች �እንገነባለን፣ ድር ጣቢያዎ ጠንካራ፣ አስተማማኝ እና ለእድገት ዝግጁ መሆኑን እናረጋግጣለን። መሠረተ ድንጋይ ለሕንፃ መረጋጋት እንደሚሰጥ በመሳሰሉት፣ እኛ ደግሞ ለንግድዎ ስኬት ዲጂታል መሠረት እናቀርባለን።">Our name reflects our approach - we build the foundational corners of your digital presence, ensuring your website is strong, reliable, and ready for growth. Just as a cornerstone provides stability to a building, we provide the digital foundation for your business success.</p>
+          <p id="aboutText1" data-en="Corner-sites is a professional web development company dedicated to creating exceptional online experiences for businesses of all sizes. As part of the Cornerstone Business Group, we uphold the highest standards of quality and integrity in all our projects." data-am="Corner-sites ለሁሉም መጠን ያላቸው ንግዶች ከፍተኛ የመስመር ላይ ተሞክሮዎችን ለመፍጠር የተሰየመ የሞያ ድር ጣቢያ አቀናባሪ ኩባንያ ነው። እንደ የ Cornerstone ንግድ ቡድን አባል፣ በሁሉም ፕሮጀክቶቻችን ከፍተኛ የጥራት እና የአገልግሎት ደረጃዎችን እንጠብቃለን።">Corner-sites is a professional web development company dedicated to creating exceptional online experiences for businesses of all sizes. As part of the Cornerstone Business Group, we uphold the highest standards of quality and integrity in all our projects.</p>
+          <p id="aboutText2" data-en="Our name reflects our approach - we build the foundational corners of your digital presence, ensuring your website is strong, reliable, and ready for growth. Just as a cornerstone provides stability to a building, we provide the digital foundation for your business success." data-am="ስሞቻችን አቀራረባችንን ያንፀባርቃል - የዲጂታል ቦታዎችዎን መሠረታዊ ማዕዘኖች እንገነባለን፣ ድር ጣቢያዎ ጠንካራ፣ አስተማማኝ እና ለእድገት ዝግጁ መሆኑን እናረጋግጣለን። መሠረተ ድንጋይ ለሕንፃ መረጋጋት እንደሚሰጥ በመሳሰሉት፣ እኛ ደግሞ ለንግድዎ ስኬት ዲጂታል መሠረት እናቀርባለን።">Our name reflects our approach - we build the foundational corners of your digital presence, ensuring your website is strong, reliable, and ready for growth. Just as a cornerstone provides stability to a building, we provide the digital foundation for your business success.</p>
         </div>
         <div class="about-image fade-in-up">
           <i class="fas fa-code" style="font-size:48px;opacity:.8;color:var(--secondary)"></i>
@@ -232,55 +336,92 @@
         </div>
 
         <div class="contact-form fade-in-up">
-          <iframe 
-            // For more help visit https://formspr.ee/react-help
-import React from 'react';
-import { useForm, ValidationError } from '@formspree/react';
+          <form 
+            action="https://formspree.io/f/mdkyewpz" 
+            method="POST"
+            class="premium-form"
+            id="contactForm"
+          >
+            <div class="form-group">
+              <label for="name" class="form-label">
+                <i class="fas fa-user"></i>
+                <span id="nameLabel" data-en="Full Name" data-am="ሙሉ ስም">Full Name</span> *
+              </label>
+              <input 
+                type="text" 
+                id="name" 
+                name="name" 
+                required 
+                class="form-input"
+                placeholder=" "
+              >
+            </div>
 
-function ContactForm() {
-  const [state, handleSubmit] = useForm("mdkyewpz");
-  if (state.succeeded) {
-      return <p>Thanks for joining!</p>;
-  }
-  return (
-    <form onSubmit={handleSubmit}>
-      <label htmlFor="email">
-        Email Address
-      </label>
-      <input
-        id="email"
-        type="email" 
-        name="email"
-      />
-      <ValidationError 
-        prefix="Email" 
-        field="email"
-        errors={state.errors}
-      />
-      <textarea
-        id="message"
-        name="message"
-      />
-      <ValidationError 
-        prefix="Message" 
-        field="message"
-        errors={state.errors}
-      />
-      <button type="submit" disabled={state.submitting}>
-        Submit
-      </button>
-    </form>
-  );
-}
+            <div class="form-group">
+              <label for="email" class="form-label">
+                <i class="fas fa-envelope"></i>
+                <span id="emailLabel" data-en="Email Address" data-am="ኢሜይል አድራሻ">Email Address</span> *
+              </label>
+              <input 
+                type="email" 
+                id="email" 
+                name="email" 
+                required 
+                class="form-input"
+                placeholder=" "
+              >
+            </div>
 
-function App() {
-  return (
-    <ContactForm />
-  );
-}
+            <div class="form-group">
+              <label for="phone" class="form-label">
+                <i class="fas fa-phone"></i>
+                <span id="phoneLabel" data-en="Phone Number" data-am="ስልክ ቁጥር">Phone Number</span>
+              </label>
+              <input 
+                type="tel" 
+                id="phone" 
+                name="phone" 
+                class="form-input"
+                placeholder=" "
+              >
+            </div>
 
-export default App;
-            >Loading…</iframe>
+            <div class="form-group">
+              <label for="service" class="form-label">
+                <i class="fas fa-cog"></i>
+                <span id="serviceLabel" data-en="Service Interested In" data-am="የሚፈልጉት አገልግሎት">Service Interested In</span>
+              </label>
+              <select id="service" name="service" class="form-input">
+                <option value="">-- Select --</option>
+                <option value="web-development" data-en="Web Development" data-am="ድህረ-ገጽ ማቀናባር">Web Development</option>
+                <option value="ecommerce" data-en="E-commerce Solution" data-am="የኢኮሜርስ መፍትሄ">E-commerce Solution</option>
+                <option value="responsive-design" data-en="Responsive Design" data-am="ተስማሚ ዲዛይን">Responsive Design</option>
+                <option value="other" data-en="Other" data-am="ሌላ">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message" class="form-label">
+                <i class="fas fa-comment"></i>
+                <span id="messageLabel" data-en="Your Message" data-am="መልእክትዎ">Your Message</span> *
+              </label>
+              <textarea 
+                id="message" 
+                name="message" 
+                rows="5" 
+                required 
+                class="form-input"
+                placeholder=" "
+              ></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn" id="submitBtn" data-en="Send Message" data-am="መልእክት ይላኩ">
+              <i class="fas fa-paper-plane"></i>
+              <span>Send Message</span>
+            </button>
+
+            <div id="form-status" class="form-status"></div>
+          </form>
         </div>
       </div>
     </div>
@@ -405,6 +546,95 @@ export default App;
     window.addEventListener('scroll', ()=> {
       const header = document.querySelector('header');
       header.style.boxShadow = window.scrollY > 60 ? '0 10px 30px rgba(0,0,0,0.08)' : '0 4px 6px rgba(0,0,0,0.06)';
+    });
+
+    // Form handling
+    const contactForm = document.getElementById('contactForm');
+    const formStatus = document.getElementById('form-status');
+
+    if (contactForm) {
+      contactForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        const submitBtn = this.querySelector('.submit-btn');
+        const originalText = submitBtn.innerHTML;
+        
+        // Show loading state
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i><span data-en="Sending..." data-am="በላክ ላይ...">Sending...</span>';
+        submitBtn.disabled = true;
+        
+        try {
+          const formData = new FormData(this);
+          const response = await fetch(this.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+              'Accept': 'application/json'
+            }
+          });
+          
+          if (response.ok) {
+            this.reset();
+            showFormStatus('success', 'Thank you! Your message has been sent successfully.', 'አመሰግናለሁ! መልእክትዎ በተሳካ ሁኔታ ቀርቧል።');
+          } else {
+            throw new Error('Form submission failed');
+          }
+        } catch (error) {
+          showFormStatus('error', 'Sorry, there was an error sending your message. Please try again or contact us directly.', 'ይቅርታ፣ መልእክትዎን በማስተላለፍ ላይ ስህተት ተከስቷል። እባክዎ እንደገና ይሞክሩ ወይም በቀጥታ ያግኙን።');
+        } finally {
+          submitBtn.innerHTML = originalText;
+          submitBtn.disabled = false;
+        }
+      });
+    }
+
+    function showFormStatus(type, enMessage, amMessage) {
+      const formStatus = document.getElementById('form-status');
+      if (!formStatus) return;
+      
+      formStatus.className = `form-status ${type}`;
+      formStatus.setAttribute('data-en', enMessage);
+      formStatus.setAttribute('data-am', amMessage);
+      
+      const currentLang = document.body.classList.contains('amharic') ? 'am' : 'en';
+      formStatus.textContent = currentLang === 'am' ? amMessage : enMessage;
+      formStatus.style.display = 'block';
+      
+      // Update message when language changes
+      const observer = new MutationObserver(function() {
+        const currentLang = document.body.classList.contains('amharic') ? 'am' : 'en';
+        formStatus.textContent = currentLang === 'am' ? amMessage : enMessage;
+      });
+      
+      observer.observe(document.body, {
+        attributes: true,
+        attributeFilter: ['class']
+      });
+      
+      // Auto hide after 8 seconds
+      setTimeout(() => {
+        formStatus.style.display = 'none';
+      }, 8000);
+    }
+
+    // Update form labels when language changes
+    const languageObserver = new MutationObserver(function() {
+      // Update select options
+      const serviceSelect = document.getElementById('service');
+      if (serviceSelect) {
+        const options = serviceSelect.querySelectorAll('option');
+        options.forEach(option => {
+          if (option.dataset.en && option.dataset.am) {
+            const isAmharic = document.body.classList.contains('amharic');
+            option.textContent = isAmharic ? option.dataset.am : option.dataset.en;
+          }
+        });
+      }
+    });
+
+    languageObserver.observe(document.body, {
+      attributes: true,
+      attributeFilter: ['class']
     });
   </script>
 </body>
