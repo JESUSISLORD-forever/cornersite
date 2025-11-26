@@ -1,11 +1,12 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-   <meta name="google-site-verification" content="k-Mqpl47KyAJHgaROnQu29qwC6-c1-YgASNFj5vb0Hg" />
-  <meta name="description" content="Corner-sites - Professional web development company in Ethiopia. We create stunning, responsive websites and e-commerce solutions for bussinesses in Addis Ababa.">
+  <meta name="google-site-verification" content="k-Mqpl47KyAJHgaROnQu29qwC6-c1-YgASNFj5vb0Hg" />
+  <meta name="description" content="CORNERSTONE TECH - Complete digital solutions in Ethiopia. Web development, graphic design, media editing, branding, and business setup services in Addis Ababa.">
 
-  <title>Corner-sites - Professional Web Development</title>
+  <title>CORNERSTONE TECH - Complete Digital Solutions</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
@@ -18,34 +19,41 @@
     body{color:var(--text);background:var(--light);line-height:1.6;overflow-x:hidden}
     .container{width:95%;max-width:1200px;margin:0 auto;padding:0 16px}
 
-    
+    /* Header */
     header{position:fixed;top:0;left:0;right:0;background:rgba(255,255,255,0.95);backdrop-filter:blur(6px);z-index:1000;box-shadow:var(--shadow)}
     .top-bar{background:linear-gradient(90deg,var(--primary),var(--secondary));color:#fff;padding:6px 0;font-size:.86rem}
     .top-bar-content{display:flex;justify-content:space-between;align-items:center}
     .group-badge{background:rgba(255,255,255,0.12);padding:5px 10px;border-radius:20px;font-weight:600;font-size:.82rem}
     .header-container{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
-    .logo{display:flex;align-items:center;gap:8px;font-weight:700;color:var(--primary);font-size:1.3rem}
-    .logo i{color:var(--accent)}
+    .logo{display:flex;align-items:center;gap:12px;font-weight:700;color:var(--primary);font-size:1.3rem;text-decoration:none}
+    .logo-img{width:50px;height:50px;object-fit:contain;border-radius:8px;background:transparent}
+    .logo-text{display:flex;flex-direction:column;line-height:1.2}
+    .logo-main{font-size:1.1rem;font-weight:800;color:var(--primary)}
+    .logo-sub{font-size:0.7rem;font-weight:500;color:var(--secondary);margin-top:-2px}
     nav{display:flex;align-items:center;gap:18px}
     nav ul{display:flex;gap:20px;list-style:none;align-items:center}
     nav a{color:var(--text);text-decoration:none;font-weight:500;padding:6px}
     .language-toggle{background:var(--secondary);color:#fff;border:none;padding:8px 12px;border-radius:12px;cursor:pointer;display:flex;gap:8px;align-items:center}
     .mobile-menu{display:none;font-size:1.25rem;color:var(--primary);cursor:pointer}
 
-    
+    /* Hero */
     .hero{padding:170px 0 80px;background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;text-align:center;position:relative}
     .hero h1{font-size:2.6rem;line-height:1.08;margin-bottom:12px}
     .hero p{opacity:.94;font-weight:300;margin:0 auto 22px;max-width:680px}
     .cta-button{background:var(--accent);color:#fff;padding:12px 26px;border-radius:28px;text-decoration:none;font-weight:600;border:none;cursor:pointer}
 
-    
+    /* Sections */
     .section{padding:80px 0}
     .section-title{text-align:center;margin-bottom:40px}
     .section-title h2{color:var(--primary);font-size:2rem;margin-bottom:8px}
-    .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px}
+    .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}
 
-    .service-card{background:#fff;border-radius:var(--radius);padding:26px;box-shadow:var(--shadow);text-align:center;border:1px solid rgba(0,0,0,0.04)}
+    .service-card{background:#fff;border-radius:var(--radius);padding:26px;box-shadow:var(--shadow);border:1px solid rgba(0,0,0,0.04);transition:var(--transition)}
+    .service-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg)}
     .service-icon{width:70px;height:70px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;background:rgba(43,108,176,0.08);font-size:1.6rem;color:var(--secondary);margin-bottom:16px}
+    .service-features{list-style:none;margin-top:15px;padding-left:0}
+    .service-features li{position:relative;padding-left:20px;margin-bottom:8px;font-size:0.9rem;color:var(--text-light)}
+    .service-features li:before{content:"✓";position:absolute;left:0;color:var(--secondary);font-weight:bold}
 
     .portfolio{background:#f1f5f9}
     .portfolio-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}
@@ -54,7 +62,7 @@
     .about-container{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:36px;align-items:center}
     .about-image{height:300px;border-radius:var(--radius);display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#f8fafc,#e2e8f0);box-shadow:var(--shadow)}
 
-    
+    /* Contact */
     .contact-container{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:32px}
     
     /* Premium Form Styles */
@@ -163,7 +171,7 @@
       display: block;
     }
 
-    
+    /* Footer */
     footer{background:var(--dark);color:#fff;padding:56px 0}
     .footer-container{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:26px}
     .social-links{display:flex;gap:10px;margin-top:12px}
@@ -171,7 +179,7 @@
 
     .cornerstone-badge{position:fixed;right:16px;bottom:16px;background:var(--primary);color:#fff;padding:10px 14px;border-radius:26px;display:flex;gap:8px;align-items:center;box-shadow:var(--shadow-lg)}
 
-   
+    /* Responsive */
     @media (max-width:900px){
       .hero h1{font-size:2rem}
       .hero{padding:140px 0 60px}
@@ -182,13 +190,17 @@
       .header-container{gap:8px}
       .logo{font-size:1.05rem}
       .hero{padding:120px 0 40px}
+      .services-grid{grid-template-columns:1fr}
     }
-   
+    
+    /* Amharic font */
     @font-face{font-family:'Abyssinica SIL';src:url('https://fonts.googleapis.com/css2?family=Abyssinica+SIL&display=swap')}
     .amharic{font-family:'Abyssinica SIL',serif;direction:ltr}
-   
+    
+    /* Accessibility */
     a:focus, button:focus, input:focus, textarea:focus {outline:3px solid rgba(43,108,176,0.12);outline-offset:2px}
     
+    /* Animation */
     .fade-in-up{opacity:0;transform:translateY(10px);transition:opacity .45s ease,transform .45s ease}
     .visible{opacity:1;transform:none}
   </style>
@@ -203,7 +215,14 @@
     </div>
 
     <div class="container header-container">
-      <div class="logo"><i class="fas fa-code"></i> Corner -<span style="color:var(--secondary)"> sites</span></div>
+      <a href="#home" class="logo">
+        <!-- PNG LOGO -->
+        <img src="logo.png" alt="CORNERSTONE TECH" class="logo-img" loading="lazy">
+        <div class="logo-text">
+          <div class="logo-main">CORNERSTONE TECH</div>
+          <div class="logo-sub">Digital Solutions</div>
+        </div>
+      </a>
 
       <nav aria-label="Main navigation">
         <ul>
@@ -222,44 +241,132 @@
     </div>
   </header>
 
- 
+  <!-- Hero Section -->
   <section class="hero" id="home">
     <div class="container">
-      <h1 id="heroTitle" data-en="Professional Web Development Solutions" data-am="የድህረ-ገጽ ማዋቀር አገልግሎት">Professional Web Development Solutions</h1>
-      <p id="heroText" data-en="We create stunning, responsive websites that help your business grow and succeed in the digital world." data-am="የንግድዎን ስኬት ለማሳደግ እና በዲጂታል ዓለም ላይ ስራዎን እንዲያሳልጡ አስደናቂ ድህረ-ገጾቸን እናዋቅራለን።">We create stunning, responsive websites that help your business grow and succeed in the digital world.</p>
-      <a href="#contact" class="cta-button" id="heroButton" data-en="Get Started" data-am="ጀምር">Get Started</a>
+      <h1 id="heroTitle" data-en="Complete Digital Solutions" data-am="ሙሉ ዲጂታል መፍትሄዎች">Complete Digital Solutions</h1>
+      <p id="heroText" data-en="From web development to graphic design, media editing to business setup - we provide comprehensive digital services to grow your business." data-am="ከድህረ-ገጽ ማዋቀር እስከ ግራፊክስ ዲዛይን፣ ከሚዲያ አርትዕ እስከ ንግድ ማዋቀር - ለንግድዎ እድገት ሙሉ ዲጂታል አገልግሎቶችን እንሰጣለን።">From web development to graphic design, media editing to business setup - we provide comprehensive digital services to grow your business.</p>
+      <a href="#contact" class="cta-button" id="heroButton" data-en="Start Your Project" data-am="ፕሮጀክትዎን ይጀምሩ">Start Your Project</a>
     </div>
   </section>
 
-  
+  <!-- Services Section - UPDATED -->
   <section class="section" id="services">
     <div class="container">
       <div class="section-title">
         <h2 id="servicesTitle" data-en="Our Services" data-am="የምንሰጣቸው አገልግሎቶች">Our Services</h2>
-        <p id="servicesSubtitle" data-en="We offer a comprehensive range of web development services to meet your business needs." data-am="የንግድዎን ፍላጎት ለማሟላት ሙሉ የድር ጣቢያ አቀናባሪ አገልግሎቶችን እንሰጣለን።">We offer a comprehensive range of web development services to meet your business needs.</p>
+        <p id="servicesSubtitle" data-en="Comprehensive digital solutions for your business growth and success" data-am="ለንግድዎ እድገት እና ስኬት ሙሉ ዲጂታል መፍትሄዎች">Comprehensive digital solutions for your business growth and success</p>
       </div>
 
       <div class="services-grid">
+        <!-- Website Design & Development -->
         <div class="service-card fade-in-up">
           <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
-          <h3 id="service1Title" data-en="Web Development" data-am="ድህረ-ገጽ ማቀናባር">Web Development</h3>
-          <p id="service1Text" data-en="Custom websites built with modern technologies and best practices." data-am="ዘመናዊ ቴክኖሎጂ እና ምርጥ ልምዶች በመጠቀም የተለየ ድር ጣቢያዎችን እንገነባለን።">Custom websites built with modern technologies and best practices.</p>
+          <h3 id="service1Title" data-en="Website Design & Development" data-am="ድህረ-ገጽ ዲዛይን እና ማዋቀር">Website Design & Development</h3>
+          <p id="service1Text" data-en="Professional websites tailored to your business needs" data-am="ለንግድዎ ፍላጎት የተመጣጠነ የሞያ ድህረ-ገጾች">Professional websites tailored to your business needs</p>
+          <ul class="service-features">
+            <li data-en="Basic websites" data-am="መሠረታዊ ድህረ-ገጾች">Basic websites</li>
+            <li data-en="Portfolio websites" data-am="ፖርትፎሊዮ ድህረ-ገጾች">Portfolio websites</li>
+            <li data-en="Business websites" data-am="የንግድ ድህረ-ገጾች">Business websites</li>
+            <li data-en="E-commerce solutions" data-am="የኢኮሜርስ መፍትሄዎች">E-commerce solutions</li>
+          </ul>
         </div>
+
+        <!-- Logo & Branding -->
         <div class="service-card fade-in-up">
-          <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
-          <h3 id="service2Title" data-en="Responsive Design" data-am="ተስማሚ ዲዛይን">Responsive Design</h3>
-          <p id="service2Text" data-en="Websites that look great on all devices." data-am="በሁሉም መሳሪያዎች መልካም የሚታዩ ድር ጣቢያዎች።">Websites that look great on all devices.</p>
+          <div class="service-icon"><i class="fas fa-palette"></i></div>
+          <h3 id="service2Title" data-en="Logo & Branding" data-am="ሎጎ እና ምልክት ማውጫ">Logo & Branding</h3>
+          <p id="service2Text" data-en="Create a strong brand identity that stands out" data-am="የሚለይ ጠንካራ የምልክት ማውጫ ማውጫ ይፍጠሩ">Create a strong brand identity that stands out</p>
+          <ul class="service-features">
+            <li data-en="Logo design" data-am="ሎጎ ዲዛይን">Logo design</li>
+            <li data-en="Brand colors & fonts" data-am="የምልክት ቀለማት እና ፊውንቶች">Brand colors & fonts</li>
+            <li data-en="Social media profiles" data-am="የማህበራዊ ሚዲያ መገለጫዎች">Social media profiles</li>
+            <li data-en="Brand guidelines" data-am="የምልክት መመሪያዎች">Brand guidelines</li>
+          </ul>
         </div>
+
+        <!-- Graphic Design -->
         <div class="service-card fade-in-up">
-          <div class="service-icon"><i class="fas fa-shopping-cart"></i></div>
-          <h3 id="service3Title" data-en="E-commerce Solutions" data-am="የኢኮሜርስ መፍትሄዎች">E-commerce Solutions</h3>
-          <p id="service3Text" data-en="Online stores with secure payment processing and inventory management." data-am="ደህንነቱ የተጠበቀ የክፍያ ስርዓት ያላቸው የመስመር ላይ ሱቆች።">Online stores with secure payment processing and inventory management.</p>
+          <div class="service-icon"><i class="fas fa-paint-brush"></i></div>
+          <h3 id="service3Title" data-en="Graphic Design" data-am="ግራፊክስ ዲዛይን">Graphic Design</h3>
+          <p id="service3Text" data-en="Visual designs that communicate your message effectively" data-am="መልእክትዎን በተሳካ ሁኔታ የሚያስተላልፉ ምስላዊ ዲዛይኖች">Visual designs that communicate your message effectively</p>
+          <ul class="service-features">
+            <li data-en="Posters & flyers" data-am="ፖስተሮች እና ፍላየሮች">Posters & flyers</li>
+            <li data-en="Brochures & catalogs" data-am="ብሮሹሮች እና ካታሎጎች">Brochures & catalogs</li>
+            <li data-en="Business cards" data-am="የንግድ ካርዶች">Business cards</li>
+            <li data-en="Social media graphics" data-am="የማህበራዊ ሚዲያ ግራፊክስ">Social media graphics</li>
+          </ul>
+        </div>
+
+        <!-- Photo & Media Editing -->
+        <div class="service-card fade-in-up">
+          <div class="service-icon"><i class="fas fa-photo-video"></i></div>
+          <h3 id="service4Title" data-en="Photo & Media Editing" data-am="ፎቶ እና ሚዲያ አርትዕ">Photo & Media Editing</h3>
+          <p id="service4Text" data-en="Professional editing for all your media needs" data-am="ለሁሉም የሚዲያ ፍላጎቶችዎ የሞያ አርትዕ">Professional editing for all your media needs</p>
+          <ul class="service-features">
+            <li data-en="Photo editing & retouching" data-am="ፎቶ አርትዕ እና ማሻሻያ">Photo editing & retouching</li>
+            <li data-en="Full video editing" data-am="ሙሉ ቪዲዮ አርትዕ">Full video editing</li>
+            <li data-en="Audio editing & mixing" data-am="ድምፅ አርትዕ እና ማዋሃድ">Audio editing & mixing</li>
+            <li data-en="Color correction" data-am="ቀለም ማስተካከያ">Color correction</li>
+          </ul>
+        </div>
+
+        <!-- Maintenance & Support -->
+        <div class="service-card fade-in-up">
+          <div class="service-icon"><i class="fas fa-tools"></i></div>
+          <h3 id="service5Title" data-en="Maintenance & Support" data-am="ጥበቃ እና ድጋፍ">Maintenance & Support</h3>
+          <p id="service5Text" data-en="Keep your digital assets running smoothly" data-am="ዲጂታል ንብረቶችዎን በስሎች እንዲሰሩ ያድርጉ">Keep your digital assets running smoothly</p>
+          <ul class="service-features">
+            <li data-en="Website updates" data-am="ድህረ-ገጽ ማዘመኛዎች">Website updates</li>
+            <li data-en="Bug fixes & troubleshooting" data-am="ስህተት ማስተካከያዎች">Bug fixes & troubleshooting</li>
+            <li data-en="Backup & security" data-am="በቁጥጥር እና ደህንነት">Backup & security</li>
+            <li data-en="Performance optimization" data-am="አፈጻጸም ማመቻቸት">Performance optimization</li>
+          </ul>
+        </div>
+
+        <!-- Business Setup -->
+        <div class="service-card fade-in-up">
+          <div class="service-icon"><i class="fas fa-store"></i></div>
+          <h3 id="service6Title" data-en="Business Setup" data-am="ንግድ ማዋቀር">Business Setup</h3>
+          <p id="service6Text" data-en="Get your business online and visible" data-am="ንግድዎን በመስመር ላይ እና ታዋቂ ያድርጉት">Get your business online and visible</p>
+          <ul class="service-features">
+            <li data-en="Google Business setup" data-am="ጉግል ንግድ ማዋቀር">Google Business setup</li>
+            <li data-en="Domain & hosting setup" data-am="ዶመይን እና ሆስቲንግ ማዋቀር">Domain & hosting setup</li>
+            <li data-en="Email configuration" data-am="ኢሜይል ማዋቀር">Email configuration</li>
+            <li data-en="Online forms setup" data-am="የመስመር ላይ ፎርም ማዋቀር">Online forms setup</li>
+          </ul>
+        </div>
+
+        <!-- Content Services -->
+        <div class="service-card fade-in-up">
+          <div class="service-icon"><i class="fas fa-feather"></i></div>
+          <h3 id="service7Title" data-en="Content Services" data-am="የይዘት አገልግሎቶች">Content Services</h3>
+          <p id="service7Text" data-en="Engaging content that connects with your audience" data-am="ከሰላፊዎችዎ ጋር የሚያገናኝ አስደሳች ይዘት">Engaging content that connects with your audience</p>
+          <ul class="service-features">
+            <li data-en="Website content writing" data-am="የድህረ-ገጽ ይዘት ጽሑፍ">Website content writing</li>
+            <li data-en="Product descriptions" data-am="የምርት መግለጫዎች">Product descriptions</li>
+            <li data-en="Social media captions" data-am="የማህበራዊ ሚዲያ መግለጫዎች">Social media captions</li>
+            <li data-en="Blog content creation" data-am="የብሎግ ይዘት ፍጠር">Blog content creation</li>
+          </ul>
+        </div>
+
+        <!-- Animation & PDF Design -->
+        <div class="service-card fade-in-up">
+          <div class="service-icon"><i class="fas fa-film"></i></div>
+          <h3 id="service8Title" data-en="Animation & PDF Design" data-am="አኒሜሽን እና PDF ዲዛይን">Animation & PDF Design</h3>
+          <p id="service8Text" data-en="Dynamic visuals and professional documents" data-am="ዳይናሚክ ምስሎች እና የሞያ ሰነዶች">Dynamic visuals and professional documents</p>
+          <ul class="service-features">
+            <li data-en="Intro/outro videos" data-am="መግቢያ/ውጤት ቪዲዮዎች">Intro/outro videos</li>
+            <li data-en="Basic animations" data-am="መሠረታዊ አኒሜሽኖች">Basic animations</li>
+            <li data-en="PDF design & layout" data-am="PDF ዲዛይን እና አቀማመጥ">PDF design & layout</li>
+            <li data-en="Interactive presentations" data-am="በይነመረብ አቀራረቦች">Interactive presentations</li>
+          </ul>
         </div>
       </div>
     </div>
   </section>
 
-  
+  <!-- Portfolio Section -->
   <section class="section portfolio" id="portfolio">
     <div class="container">
       <div class="section-title">
@@ -292,26 +399,27 @@
     </div>
   </section>
 
-  
+  <!-- About Section -->
   <section class="section about" id="about">
     <div class="container">
       <div class="section-title">
-        <h2 id="aboutTitle" data-en="About Corner-sites" data-am="ስለ Corner-sites">About Corner-sites</h2>
+        <h2 id="aboutTitle" data-en="About CORNERSTONE TECH" data-am="ስለ CORNERSTONE TECH">About CORNERSTONE TECH</h2>
         <p id="aboutSubtitle" data-en="Learn more about our company and our mission." data-am="ስለ ኩባንያችን እና ተልዕኮችን ይወቁ።">Learn more about our company and our mission.</p>
       </div>
       <div class="about-container">
         <div class="about-content fade-in-up">
-          <h3 id="aboutContentTitle" data-en="Building Digital Foundations" data-am="ዲጂታል ድህረ-ገጾችን መገንባት">Building Digital Foundations</h3>
-          <p id="aboutText1" data-en="Corner-sites is a professional web development company dedicated to creating exceptional online experiences for businesses of all sizes. As part of the Cornerstone Business Group, we uphold the highest standards of quality and integrity in all our projects." data-am="Corner-sites ለሁሉም መጠን ያላቸው ንግዶች ከፍተኛ የመስመር ላይ ተሞክሮዎችን ለመፍጠር የተሰየመ የሞያ ድር ጣቢያ አቀናባሪ ኩባንያ ነው። እንደ የ Cornerstone ንግድ ቡድን አባል፣ በሁሉም ፕሮጀክቶቻችን ከፍተኛ የጥራት እና የአገልግሎት ደረጃዎችን እንጠብቃለን።">Corner-sites is a professional web development company dedicated to creating exceptional online experiences for businesses of all sizes. As part of the Cornerstone Business Group, we uphold the highest standards of quality and integrity in all our projects.</p>
-          <p id="aboutText2" data-en="Our name reflects our approach - we build the foundational corners of your digital presence, ensuring your website is strong, reliable, and ready for growth. Just as a cornerstone provides stability to a building, we provide the digital foundation for your business success." data-am="ስሞቻችን አቀራረባችንን ያንፀባርቃል - የዲጂታል ቦታዎችዎን መሠረታዊ ማዕዘኖች እንገነባለን፣ ድር ጣቢያዎ ጠንካራ፣ አስተማማኝ እና ለእድገት ዝግጁ መሆኑን እናረጋግጣለን። መሠረተ ድንጋይ ለሕንፃ መረጋጋት እንደሚሰጥ በመሳሰሉት፣ እኛ ደግሞ ለንግድዎ ስኬት ዲጂታል መሠረት እናቀርባለን።">Our name reflects our approach - we build the foundational corners of your digital presence, ensuring your website is strong, reliable, and ready for growth. Just as a cornerstone provides stability to a building, we provide the digital foundation for your business success.</p>
+          <h3 id="aboutContentTitle" data-en="Complete Digital Solutions" data-am="ሙሉ ዲጂታል መፍትሄዎች">Complete Digital Solutions</h3>
+          <p id="aboutText1" data-en="CORNERSTONE TECH is a comprehensive digital solutions provider dedicated to helping businesses of all sizes succeed in the digital world. As part of the Cornerstone Business Group, we uphold the highest standards of quality and integrity in all our projects." data-am="CORNERSTONE TECH ለሁሉም መጠን ያላቸው ንግዶች በዲጂታል ዓለም ላይ እንዲያምሩ የታገለ ሙሉ ዲጂታል መፍትሄ አቅራቢ ነው። እንደ የ Cornerstone ንግድ ቡድን አባል፣ በሁሉም ፕሮጀክቶቻችን ከፍተኛ የጥራት እና የአገልግሎት ደረጃዎችን እንጠብቃለን።">CORNERSTONE TECH is a comprehensive digital solutions provider dedicated to helping businesses of all sizes succeed in the digital world. As part of the Cornerstone Business Group, we uphold the highest standards of quality and integrity in all our projects.</p>
+          <p id="aboutText2" data-en="From web development and graphic design to media editing and business setup, we provide end-to-end digital services. Our name reflects our commitment to being the foundational support for your digital success - just as a cornerstone provides stability to a building, we provide the digital foundation for your business growth." data-am="ከድህረ-ገጽ ማዋቀር እና ግራፊክስ ዲዛይን እስከ ሚዲያ አርትዕ እና ንግድ ማዋቀር፣ ከመጀመሪያ እስከ መጨረሻ ዲጂታል አገልግሎቶችን እንሰጣለን። ስሞቻችን ለዲጂታል ስኬትዎ መሠረታዊ ድጋፍ ለመሆን ያለን ቁርጠኝነት ያንፀባርቃል - መሠረተ ድንጋይ ለሕንፃ መረጋጋት እንደሚሰጥ በመሳሰሉት፣ እኛ ደግሞ ለንግድዎ እድገት ዲጂታል መሠረት እናቀርባለን።">From web development and graphic design to media editing and business setup, we provide end-to-end digital services. Our name reflects our commitment to being the foundational support for your digital success - just as a cornerstone provides stability to a building, we provide the digital foundation for your business growth.</p>
         </div>
         <div class="about-image fade-in-up">
-          <i class="fas fa-code" style="font-size:48px;opacity:.8;color:var(--secondary)"></i>
+          <i class="fas fa-layer-group" style="font-size:48px;opacity:.8;color:var(--secondary)"></i>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Contact Section -->
   <section class="section" id="contact">
     <div class="container">
       <div class="section-title">
@@ -393,9 +501,15 @@
               </label>
               <select id="service" name="service" class="form-input">
                 <option value="">-- Select --</option>
-                <option value="web-development" data-en="Web Development" data-am="ድህረ-ገጽ ማቀናባር">Web Development</option>
-                <option value="ecommerce" data-en="E-commerce Solution" data-am="የኢኮሜርስ መፍትሄ">E-commerce Solution</option>
-                <option value="responsive-design" data-en="Responsive Design" data-am="ተስማሚ ዲዛይን">Responsive Design</option>
+                <option value="web-development" data-en="Website Design & Development" data-am="ድህረ-ገጽ ዲዛይን እና ማዋቀር">Website Design & Development</option>
+                <option value="branding" data-en="Logo & Branding" data-am="ሎጎ እና ምልክት ማውጫ">Logo & Branding</option>
+                <option value="graphic-design" data-en="Graphic Design" data-am="ግራፊክስ ዲዛይን">Graphic Design</option>
+                <option value="media-editing" data-en="Photo & Media Editing" data-am="ፎቶ እና ሚዲያ አርትዕ">Photo & Media Editing</option>
+                <option value="maintenance" data-en="Maintenance & Support" data-am="ጥበቃ እና ድጋፍ">Maintenance & Support</option>
+                <option value="business-setup" data-en="Business Setup" data-am="ንግድ ማዋቀር">Business Setup</option>
+                <option value="content-services" data-en="Content Services" data-am="የይዘት አገልግሎቶች">Content Services</option>
+                <option value="animation-pdf" data-en="Animation & PDF Design" data-am="አኒሜሽን እና PDF ዲዛይን">Animation & PDF Design</option>
+                <option value="multiple" data-en="Multiple Services" data-am="በርካታ አገልግሎቶች">Multiple Services</option>
                 <option value="other" data-en="Other" data-am="ሌላ">Other</option>
               </select>
             </div>
@@ -427,12 +541,12 @@
     </div>
   </section>
 
-  
+  <!-- Footer -->
   <footer>
     <div class="container footer-container">
       <div>
-        <h3>Corner<span style="color:var(--secondary)">sites</span></h3>
-        <p id="footerText" data-en="Professional web development solutions for your business growth." data-am="ለንግድዎ እድገት የድህረ ገጽ መፍትሄዎች።">Professional web development solutions for your business growth.</p>
+        <h3>CORNERSTONE <span style="color:var(--secondary)">TECH</span></h3>
+        <p id="footerText" data-en="Complete digital solutions for your business growth and success." data-am="ለንግድዎ እድገት እና ስኬት ሙሉ ዲጂታል መፍትሄዎች።">Complete digital solutions for your business growth and success.</p>
         <div style="margin-top:12px;background:rgba(255,255,255,0.08);display:inline-block;padding:6px 10px;border-radius:8px;font-size:.85rem">PART OF CORNERSTONE BUSINESS GROUP</div>
       </div>
       <div>
@@ -448,20 +562,20 @@
       <div>
         <h3 id="servicesFooterTitle" data-en="Services" data-am="አገልግሎቶች">Services</h3>
         <ul style="list-style:none;padding-left:0;margin-top:8px">
-          <li><a href="#" class="footer-link" data-en="Web Development" data-am="ድር ጣቢያ አቀናባሪ" style="color:#cbd5e0;text-decoration:none">Web Development</a></li>
-          <li><a href="#" class="footer-link" data-en="E-commerce" data-am="ኢኮሜርስ" style="color:#cbd5e0;text-decoration:none">E-commerce</a></li>
-          <li><a href="#" class="footer-link" data-en="Responsive Design" data-am="ተስማሚ ዲዛይን" style="color:#cbd5e0;text-decoration:none">Responsive Design</a></li>
-          <li><a href="#" class="footer-link" data-en="SEO Optimization" data-am="SEO ማመቻቸት" style="color:#cbd5e0;text-decoration:none">SEO Optimization</a></li>
+          <li><a href="#services" class="footer-link" data-en="Web Development" data-am="ድር ጣቢያ አቀናባሪ" style="color:#cbd5e0;text-decoration:none">Web Development</a></li>
+          <li><a href="#services" class="footer-link" data-en="Graphic Design" data-am="ግራፊክስ ዲዛይን" style="color:#cbd5e0;text-decoration:none">Graphic Design</a></li>
+          <li><a href="#services" class="footer-link" data-en="Media Editing" data-am="ሚዲያ አርትዕ" style="color:#cbd5e0;text-decoration:none">Media Editing</a></li>
+          <li><a href="#services" class="footer-link" data-en="Business Setup" data-am="ንግድ ማዋቀር" style="color:#cbd5e0;text-decoration:none">Business Setup</a></li>
         </ul>
       </div>
     </div>
-    <div style="text-align:center;padding-top:20px;color:#a0aec0;font-size:.9rem">&copy; 2025 Corner-sites. All rights reserved. Part of Cornerstone Business Group.</div>
+    <div style="text-align:center;padding-top:20px;color:#a0aec0;font-size:.9rem">&copy; 2025 CORNERSTONE TECH. All rights reserved. Part of Cornerstone Business Group.</div>
   </footer>
 
   <div class="cornerstone-badge"><i class="fas fa-gem" style="color:var(--accent)"></i><span id="badgeText">Part of Cornerstone Business Group</span></div>
 
   <script>
-    
+    /* Language toggle */
     const languageToggle = document.getElementById('languageToggle');
     const languageText = document.getElementById('languageText');
     let currentLanguage = 'en';
@@ -496,7 +610,7 @@
     }
     languageToggle.addEventListener('click', toggleLanguage);
 
-    
+    /* Mobile nav toggle */
     const mobileToggle = document.getElementById('mobileToggle');
     const nav = document.querySelector('nav');
     mobileToggle.addEventListener('click', () => {
@@ -517,7 +631,7 @@
       }
     });
 
-    
+    /* Smooth scroll */
     document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
       anchor.addEventListener('click', function(e){
         const targetId = this.getAttribute('href');
@@ -534,7 +648,7 @@
       });
     });
 
-    
+    /* Animation on scroll */
     const observer = new IntersectionObserver(entries=>{
       entries.forEach(en=>{
         if(en.isIntersecting) en.target.classList.add('visible');
@@ -542,7 +656,7 @@
     }, {threshold:0.12});
     document.querySelectorAll('.fade-in-up').forEach(el=>observer.observe(el));
 
-    
+    /* Header shadow on scroll */
     window.addEventListener('scroll', ()=> {
       const header = document.querySelector('header');
       header.style.boxShadow = window.scrollY > 60 ? '0 10px 30px rgba(0,0,0,0.08)' : '0 4px 6px rgba(0,0,0,0.06)';
